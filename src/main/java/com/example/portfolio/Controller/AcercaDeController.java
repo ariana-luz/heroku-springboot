@@ -16,13 +16,15 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = "*")
+
 @RestController
+@CrossOrigin(origins = "*")
 public class AcercaDeController {
 
     @Autowired
     private IAcercaDeService interAcercaDe;
-
+    
+    @CrossOrigin(origins = "*")
     @GetMapping("/acercade/traer")
     public List<AcercaDe> getAcercaDe() {
         return interAcercaDe.getAcercaDe();

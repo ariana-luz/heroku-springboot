@@ -23,23 +23,27 @@ public class ExperienciaController {
     @Autowired
     private IExperienciaService interExperiencia;
     
+    @CrossOrigin(origins = "*")
     @GetMapping("/experiencia/traer")
     public List<Experiencia> getExperiencia() {
         return interExperiencia.getExperiencia();
     }
     
+    @CrossOrigin(origins = "*")
     @GetMapping("/experiencia/detail/{id}")
     public ResponseEntity<Experiencia> findExperiencia(@PathVariable("id") Long id){
         Experiencia experiencia = interExperiencia.findExperiencia(id);
         return new ResponseEntity(experiencia, HttpStatus.OK);
     }
     
+    @CrossOrigin(origins = "*")
     @PostMapping("/experiencia/crear")
     public ResponseEntity createExperiencia(@RequestBody Experiencia experiencia) {
         interExperiencia.saveExperiencia(experiencia);
         return new ResponseEntity(HttpStatus.OK);
     }
     
+    @CrossOrigin(origins = "*")
     @DeleteMapping("/experiencia/borrar/{id}")
     public ResponseEntity deleteExperiencia(@PathVariable Long id) {
         interExperiencia.deleteExperiencia(id);
@@ -47,6 +51,7 @@ public class ExperienciaController {
         return new ResponseEntity(HttpStatus.OK);
     }
     
+    @CrossOrigin(origins = "*")
     @PutMapping("/experiencia/editar/{id}")
     public ResponseEntity<?> editExperiencia(@PathVariable("id") Long id, @RequestBody ExperienciaDto experienciaDto){
         

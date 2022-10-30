@@ -12,8 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/user")
-@CrossOrigin("http://localhost:4200/")
-
+@CrossOrigin(origins = "https://portfolio-ariana-osuna-vargas.web.app")
 public class UserController {
     @Autowired
     private UserRepository repo;
